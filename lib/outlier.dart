@@ -3,15 +3,16 @@ abstract class Outlier {
 }
 
 class IntOutlier implements Outlier {
-  List<int> numbers;
+  final List<int> numbers;
+  int? outlierValue;
   @override
   findOutlier() {
     if (numbers.length >= 3) {
       try {
-        int outlierValue = numbers.singleWhere((element) => element % 2 == 0);
+        final outlierValue = numbers.singleWhere((element) => element % 2 == 0);
         return outlierValue;
       } catch (e) {
-        int outlierValue = numbers.singleWhere((element) => element % 2 != 0);
+        final outlierValue = numbers.singleWhere((element) => element % 2 != 0);
         return outlierValue;
       }
     }

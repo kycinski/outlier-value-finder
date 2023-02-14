@@ -10,10 +10,10 @@ class HomePage extends StatelessWidget {
 
   void _onSearchButtonPressed(BuildContext context) {
     // Konwersja wpisanych wartośći na listę typu int
-    List<int> intNumbers =
+    final List<int> intNumbers =
         inputController.text.split(",").map((e) => int.parse(e)).toList();
 
-    int result = IntOutlier(intNumbers).findOutlier();
+    final int result = IntOutlier(intNumbers).findOutlier();
 
     Navigator.push(
       context,
